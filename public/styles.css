@@ -1,0 +1,107 @@
+body {
+    background: linear-gradient(#3BA7B0, #36B88C);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: 650px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    margin-left: 10%; /* Alineado a la izquierda para pantallas grandes */
+}
+
+.titleContainer {
+    text-align: left;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#title {
+    font-family: 'Inter';
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 5%;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+input[type="email"], input[type="password"], button {
+    font-family: 'Inter';
+    width: 90%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0;
+}
+
+input[type="email"], input[type="password"] {
+    background-color: #EDF4F2;
+    border: none;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#loginButton {
+    background-color: black;
+    color: white;
+}
+
+#createButton {
+    background-color: white;
+    color: black;
+    border: solid black 1px;
+}
+
+#bussinessButton {
+    background-color: white;
+}
+
+#bussinessButton:hover {
+    background-color: #EBEBEB;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        justify-content: center; /* Centra el contenedor en pantallas pequeñas */
+    }
+
+    .loginContainer {
+        margin-left: 0; /* Quita el margen izquierdo para centrar el contenedor */
+        margin: 5%;
+        width: 90%; /* Ajusta el ancho a 90% en pantallas pequeñas */
+    }
+}
