@@ -106,6 +106,17 @@ button {
     }
 }
 
+/*CSS para las imagenes y la imagen de Logo*/
+
+.welcomeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    border: solid black 2px;
+    margin-left: 25%;
+}
+
 
 
 
