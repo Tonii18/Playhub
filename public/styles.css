@@ -17,14 +17,15 @@ body {
     align-items: center;
     width: 100%;
     max-width: 500px;
-    height: 650px;
+    height: 650px; /* Altura fija para pantallas grandes */
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
-    margin-left: 10%; /* Alineado a la izquierda para pantallas grandes */
+    margin-left: 10%; /* Mantén el margen izquierdo para pantallas grandes */
 }
 
+/* Título y estilos previos */
 .titleContainer {
     text-align: left;
     width: 100%;
@@ -93,6 +94,16 @@ button {
     background-color: #EBEBEB;
 }
 
+/* Media query para pantallas intermedias (como portátiles) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .loginContainer {
+        height: 550px; /* Reduce la altura para pantallas intermedias */
+        max-width: 450px; /* Reduce el ancho máximo para pantallas intermedias */
+        padding: 15px; /* Ajusta el padding para ahorrar espacio */
+        margin-left: 5%; /* Reduce el margen izquierdo */
+    }
+}
+
 /* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
     body {
@@ -105,3 +116,4 @@ button {
         width: 90%; /* Ajusta el ancho a 90% en pantallas pequeñas */
     }
 }
+
