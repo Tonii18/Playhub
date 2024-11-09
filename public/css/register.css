@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#3BA7B0, #36B88C);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0 20px; /* Asegura espacio en los márgenes */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Para evitar que el contenido se expanda demasiado */
+}
+
+.playText, .hubText {
+    flex: 1;
+    text-align: center;
+}
+
+.playText h1{
+    font-size: 90px;
+    color: white;
+    font-weight: 900;
+    margin: 0;
+}
+
+.hubText h1{
+    font-size: 90px;
+    color: white;
+    font-weight: 100;
+    margin: 0;
+}
+
+.registerContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco con opacidad */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px; /* Asegura que el formulario no se expanda demasiado */
+}
+
+.logoContainer img {
+    width: 120px; /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.inputsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputsContainer input {
+    font-family: 'Inter';
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border:none;
+    background-color: #EDF4F2;   
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    font-family: 'Inter';
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: #2b2b2b;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .playText, .hubText {
+        margin-bottom: 20px;
+    }
+
+    .registerContainer {
+        width: 90%; /* Ajusta el tamaño del formulario en pantallas más pequeñas */
+        margin-bottom: 20px;
+    }
+
+    .playText h1, .hubText h1 {
+        font-size: 2rem;
+    }
+
+    .logoContainer img {
+        width: 100px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .playText h1, .hubText h1 {
+        font-size: 1.5rem;
+    }
+}
+
