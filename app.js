@@ -6,7 +6,6 @@ const port = 3000;
 const cors = require('cors');
 
 app.use(cors());
-
 app.use(express.json());  // Middleware para parsear JSON
 
 // Configurar la carpeta 'public' como directorio estático
@@ -23,6 +22,10 @@ app.listen(port, () => {
 /*
 * CREACION DE RUTAS 
 */
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'register.html'));
@@ -47,7 +50,11 @@ db.connect((err) => {
     console.log('Conectado a la base de datos SQL con exito :)');
 });
 
-// FUNCION DE CREACION DE CUENTA
+/*
+* FUNCIONES
+*/
+
+// Funcion de crear cuenta
 
 const createAccount = (req, res) => {
     const {correo, nombre, contraseña, telefono} = req.body;
@@ -75,8 +82,32 @@ const createAccount = (req, res) => {
     });
 };
 
+// Funcion de inicio de sesion
+
+const loginUser = (req, res) => {
+    const {nombre, contraseña} = req.body;
+
+    if(!nombre || !contraseña){
+        return res.status(400).json({error: 'Todos los campos son obligatorios'});
+    }
+
+    const query = "SELECT * FROM usuario WHERE nombre = ? AND contraseña = ?";
+    db.query(query, [nombre, contraseña], (err, results) => {
+        if(err){
+            return res.status(500).json({error: 'Error en la consulta de la base de datos'});
+        }
+
+        if(results.length === 0){
+            return res.status(401).json({error: 'Usuario no existente'});
+        }
+
+        return res.status(200).json({message: 'Inicio de sesion exitoso'});
+    });
+};
+
 // ruta para manejar la creacion de la cuenta
 
 app.post('/register', createAccount);
+app.post('/login', loginUser);
 
 
