@@ -31,6 +31,14 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'register.html'));
 });
 
+app.get('/loginBussiness', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'loginBussiness.html'));
+});
+
+app.get('/registerBussiness', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'registerBussiness.html'));
+});
+
 /*
 *   CREACION DE LA BASE DE DATOS
 */
@@ -54,7 +62,7 @@ db.connect((err) => {
 * FUNCIONES
 */
 
-// Funcion de crear cuenta
+// Funcion de crear cuenta de 'Usuario'
 
 const createAccount = (req, res) => {
     const {correo, nombre, contraseña, telefono} = req.body;
@@ -82,7 +90,7 @@ const createAccount = (req, res) => {
     });
 };
 
-// Funcion de inicio de sesion
+// Funcion de inicio de sesion de 'Usuario'
 
 const loginUser = (req, res) => {
     const {nombre, contraseña} = req.body;
@@ -104,6 +112,12 @@ const loginUser = (req, res) => {
         return res.status(200).json({message: 'Inicio de sesion exitoso'});
     });
 };
+
+// Funcion de crear cuenta de 'Propietario'
+
+const createBussinessAccount = (req, res) => {
+    
+}
 
 // ruta para manejar la creacion de la cuenta
 

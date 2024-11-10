@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#3BA7B0, #36B88C);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px; /* Asegura espacio en los márgenes */
+}
+
+.registerContainer {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoContainer img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.titleContainer span {
+    font-family: 'Inter';
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+#playText{
+    font-weight: 900;
+}
+
+#hubText{
+    font-weight: 100;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.inputsContainer input {
+    font-family: 'Inter';
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#createButton {
+    font-family: 'Inter';
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+#createButton:hover {
+    background-color: #3b3b3b;
+}
+
+.phraseContainer {
+    font-family: 'Inter';
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+}
+
+h3{
+    font-weight: 200;
+}
+
+/* Media query para pantallas móviles */
+@media (max-width: 600px) {
+    .registerContainer {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    .logoContainer img {
+        width: 80px;
+        margin-bottom: 15px;
+    }
+
+    .titleContainer h1 {
+        font-size: 20px;
+    }
+
+    .inputsContainer input {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    #createButton {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .phraseContainer {
+        font-size: 14px;
+        max-width: 100%;
+    }
+}

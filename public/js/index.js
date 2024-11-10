@@ -2,6 +2,10 @@ document.getElementById('createButton').addEventListener('click', function(){
     window.location.href = "/register";
 });
 
+document.getElementById('bussinessButton').addEventListener('click', function(){
+    window.location.href = "/loginBussiness";
+});
+
 document.getElementById('loginButton').addEventListener('click', async function() {
     const nombre = document.getElementById('userInput').value;
     const contraseña = document.getElementById('passwordInput').value;

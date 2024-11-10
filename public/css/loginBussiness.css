@@ -1,0 +1,162 @@
+/* Reinicio de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#3BA7B0, #36B88C);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0 20px; /* Espacio en los márgenes para no pegarse al borde */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px black;
+}
+
+/* Contenedor de Login */
+.loginContainer {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F9FA;
+}
+
+.titleContainer{
+    font-family: 'Inter';
+    font-size: 28px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.inputContainer input {
+    font-family: 'Inter';
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.inputContainer input:focus {
+    border-color: #3BA7B0;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.buttonContainer button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginButton{
+    font-family: 'Inter';
+    background-color: #000000;
+    color: white;
+    border: none;
+}
+
+#createButton{
+    font-family: 'Inter';
+    border: solid black 1px;
+    background-color: white;
+}
+
+#loginButton:hover{
+    background-color: #3d3d3d;
+}
+
+#createButton:hover{
+    background-color: #ebeaea;
+}
+
+/* Contenedor de Mensajes */
+.messagesContainer {
+    flex: 1;
+    background: linear-gradient(#3BA7B0, #36B88C);
+    /*background-color: rgba(255, 255, 255, 0.096);*/
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.logoContainer img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.titleContainer h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#titleContainer{
+    font-family: 'Inter';
+    color: white;
+    font-weight: lighter;
+}
+
+.vectorContainer img {
+    width: 250px;
+    height: auto;
+}
+
+/* Resto del CSS que ya tienes */
+
+/* Media query para pantallas móviles */
+@media (max-width: 768px) {
+    .messagesContainer {
+        display: none; /* Oculta el panel de mensajes */
+    }
+
+    .loginContainer {
+        width: 100%; /* Ajusta el loginContainer para que ocupe todo el ancho */
+        margin: 0 auto; /* Centra el loginContainer */
+    }
+
+    .container {
+        flex-direction: column; /* Cambia la dirección del flex a columna si es necesario */
+        align-items: center; /* Centra los elementos en el eje horizontal */
+    }
+}
+
