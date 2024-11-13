@@ -9,28 +9,40 @@
 </head>
 <body>
     
-    <div class="registerContainer">
-        <div class="logoContainer">
-            <img src="images/logo.png" alt="Logo">
+    <div class="container">
+
+        <!--Contenedor de registro de propietario-->
+        <div class="userRegister">
+            <div class="title">
+                <h1>Registrate como propietario del negocio</h1>
+            </div>
+
+            <div class="inputContainer">
+                <input type="text" placeholder="Correo electronico" id="correoInput">
+                <input type="text" placeholder="Nombre" id="nombreInput">
+                <input type="text" placeholder="Apellidos" id="apellidosInput">
+                <input type="password" placeholder="Contraseña" id="contraseñaInput">
+                <input type="text" placeholder="Telefono" id="telefonoInput">
+            </div>
         </div>
 
-        <div class="titleContainer">
-            <span>
-                <h1 id="playText">PLAY</h1>
-                <h1 id="hubText">HUB</h1>
-            </span>
+        <!--Contenedor de registro de la empresa-->
+        <div class="bussinessRegister">
+            <div class="bussineesTitle">
+                <h1>Registra tu negocio <br> rellenando el formulario</h1>
+            </div>
+            
+            <div class="inputBussinessContainer">
+                <input type="text" placeholder="Nombre del negocio" id="nombreNegocioInput">
+                <input type="text" placeholder="Correo electronico" id="correoNegocioInput">
+                <input type="text" placeholder="Ubicacion" id="ubicacionInput">
+                <input type="text" placeholder="Telefono" id="telefonoNegocioInput">
+            </div>
+
+            <div class="buttonContainer">
+                <button type="submit">Registrarse</button>
+            </div>
         </div>
-        
-        <div class="inputsContainer">
-            <input type="text" placeholder="Correo electronico" id="correo" name="correo">
-            <input type="text" placeholder="Nombre" id="nombre" name="nombre">
-            <input type="text" placeholder="Apellidos" id="apellido" name="apellido">
-            <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña">
-            <input type="text" placeholder="Numero de telefono" id="telefono" name="telefono">
-        </div>
-    
-        <button type="submit" id="createButton">Crear cuenta</button>
-        
     </div>
 
     <div class="phraseContainer">

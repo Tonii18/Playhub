@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,121 +14,129 @@ body {
     background: linear-gradient(#3BA7B0, #36B88C);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 20px; /* Asegura espacio en los márgenes */
+    color: #fff;
+    padding: 20px;
 }
 
-.registerContainer {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 40px 30px;
-    width: 100%;
-    max-width: 450px;
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logoContainer img {
-    width: 100px;
-    height: auto;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    width: 100%;
     margin-bottom: 20px;
 }
 
-.titleContainer span {
-    font-family: 'Inter';
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 30px;
-}
-
-#playText{
-    font-weight: 900;
-}
-
-#hubText{
-    font-weight: 100;
-}
-
-.inputsContainer {
+.userRegister, .bussinessRegister {
+    flex: 1;
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userRegister {
+    background-color: #f4f4f4;
+}
+
+.bussinessRegister {
+    background-color: #e7e7e7;
+}
+
+.title, .bussineesTitle {
+    font-family: 'Inter';
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.inputContainer, .inputBussinessContainer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
-.inputsContainer input {
+input {
     font-family: 'Inter';
-    padding: 12px 15px;
-    border: none;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s;
 }
 
-#createButton {
-    font-family: 'Inter';
+input:focus {
+    border-color: #3ba7b0;
+}
+
+.buttonContainer {
     margin-top: 20px;
-    padding: 12px 20px;
-    background-color: #000000;
-    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Inter';
+    padding: 12px 24px;
     border: none;
     border-radius: 5px;
+    background-color: #000000;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%;
 }
 
-#createButton:hover {
-    background-color: #3b3b3b;
+button:hover {
+    background-color: #555555;
 }
 
 .phraseContainer {
     font-family: 'Inter';
-    margin-top: 30px;
     text-align: center;
-    color: white;
-    max-width: 600px;
+    margin-top: 20px;
+    max-width: 800px;
+    color: #fff;
 }
 
-h3{
+h1, h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-family: 'Inter';
+    font-size: 20px;
     font-weight: 200;
 }
 
-/* Media query para pantallas móviles */
-@media (max-width: 600px) {
-    .registerContainer {
-        padding: 30px;
-        max-width: 100%;
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
 
-    .logoContainer img {
-        width: 80px;
-        margin-bottom: 15px;
+    .userRegister, .bussinessRegister {
+        padding: 20px;
     }
 
-    .titleContainer h1 {
-        font-size: 20px;
+    h1 {
+        font-size: 1.5rem;
     }
 
-    .inputsContainer input {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    #createButton {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .phraseContainer {
-        font-size: 14px;
-        max-width: 100%;
+    h3 {
+        font-size: 0.9rem;
     }
 }
+
