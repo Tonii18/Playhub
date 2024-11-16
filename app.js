@@ -116,12 +116,98 @@ const loginUser = (req, res) => {
 // Funcion de crear cuenta de 'Propietario'
 
 const createBussinessAccount = (req, res) => {
-    
-}
+    const {correo, nombre, apellidos, contraseña, telefono} = req.body;
+
+    if(!correo || !nombre || !apellidos || !contraseña || !telefono){
+        return res.status(400).json({error: 'Todos los campos del propietario son obligatorios'});
+    }
+
+    const {nombre_negocio, correo_negocio, ubicacion, telefono_negocio} = req.body;
+
+    if(!nombre_negocio || !correo_negocio || !ubicacion || !telefono_negocio){
+        return res.status(400).json({error: 'Todos los campos del negocio son obligatorios'});
+    }
+
+    const ownerExist = 'SELECT * FROM propietario WHERE correo = ?';
+    const bussinessExist = 'SELECT * FROM negocios WHERE propietario_id = ?';
+    const insertBussiness = 'INSERT INTO negocios (nombre_negocio, correo_negocio, ubicacion, telefono_negocio, ingresos, propietario_id) VALUES (?, ?, ?, ?, ?, ?)';
+    const insertOwner = 'INSERT INTO propietario (nombre, apellidos, correo, contraseña, telefono) VALUES (?, ?, ?, ?, ?)';
+    // Verificar si el propietario ya existe
+    db.query(ownerExist, [correo], (err, propietariosResults) => {
+        if(err){
+            return res.status(500).json({error: 'Error en la consulta de la base de datos'});
+        }
+
+        if(propietariosResults.length > 0){
+            // Si el propietario existe, verificar si ya tiene un negocio
+            const propietarioId = propietariosResults[0].id;
+            db.query(bussinessExist, [propietarioId], (err, negociosResults) => {
+                if(err){
+                    return res.status(500).json({error: 'Error en la consulta de la base de datos'});
+                }
+
+                if(negociosResults.length > 0){
+                    return res.status(400).json({error: 'El propietario ya tiene un negocio'});
+                }
+
+                // Si no tiene un negocio, registramos el nuevo negocio
+                db.query(insertBussiness, [nombre_negocio, correo_negocio, ubicacion, telefono_negocio, 0, propietarioId], (err, results) => {
+                    if(err){
+                        return res.status(400).json({error: 'Error al conectar la base de datos'});
+                    }
+                    return res.status(201).json({message: 'Negocio registrado correctamente'});
+                });
+            });
+        }else{
+            // Si el propietario no existe, lo creamos y luego registramos el negocio
+            db.query(insertOwner, [nombre, apellidos, correo, contraseña, telefono], (err, propietariosInsertResults) => {
+                if(err){
+                    return res.status(500).json({error: 'Error al registrar el propietario'});
+                }
+
+                const propietarioId = propietariosInsertResults.insertId;
+
+                // Ahora registramos el negocio
+                db.query(insertBussiness, [nombre_negocio, correo_negocio, ubicacion, telefono_negocio, ingresos, propietarioId], (err, negociosResults) => {
+                    if(err){
+                        return res.status(500).json({error: 'Error al registrar el negocio'});
+                    }
+                    return res.status(201).json({message: 'Negocio registrado correctamente'});
+                });
+            });
+        }
+    });
+};
+
+// Funcion de inicio de sesion de Propietario
+
+const loginOwnerBussiness = (req, res) => {
+    const {nombre, contraseña} = req.body;
+
+    if(!nombre || !contraseña){
+        return res.status(400).json({error: 'Todos los campos son obligatorios'});
+    }
+
+    const getOwner = 'SELECT * FROM propietario WHERE nombre = ? AND contraseña = ?';
+
+    db.query(getOwner, [nombre, contraseña], (err, propietarioResults) => {
+        if(err){
+            return res.status(500).json({error: 'Error en la consulta de la base de datos'});
+        }
+
+        if(propietarioResults.length === 0){
+            return res.status(401).json({error: 'Usuario o contraseña incorrectos'});
+        }
+
+        return res.status(200).json({message: 'Sesion iniciada correctamente'});
+    });
+};
 
 // ruta para manejar la creacion de la cuenta
 
 app.post('/register', createAccount);
 app.post('/login', loginUser);
+app.post('/registerBussiness', createBussinessAccount);
+app.post('/loginBussiness', loginOwnerBussiness);
 
 
