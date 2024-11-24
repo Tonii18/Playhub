@@ -30,7 +30,7 @@ document.getElementById('loginButton').addEventListener('click', async function(
 
         if(response.ok){
             alert('Inicio de sesion correcto');
-            //window.location.href = '/mainmenu';
+            window.location.href = '/mainmenu';
         }else{
             alert(result.error || 'Error al crear la cuenta');
         }

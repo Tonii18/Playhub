@@ -39,6 +39,10 @@ app.get('/registerBussiness', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'registerBussiness.html'));
 });
 
+app.get('/mainmenu', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'mainPage.html'));
+});
+
 /*
 *   CREACION DE LA BASE DE DATOS
 */
@@ -57,6 +61,11 @@ db.connect((err) => {
     }
     console.log('Conectado a la base de datos SQL con exito :)');
 });
+
+/*
+* Configuracion de express-session
+*/
+
 
 /*
 * FUNCIONES

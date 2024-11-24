@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/mainPage.css">
+        <title>Bienvenido a PlayHub</title>
+    </head>
+    <body>
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <div class="logo">
+                <span id="play">PLAY</span>
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <span id="hub">HUB</span>
+            </div>
+            <button class="menu-button" id="menu-button">☰</button>
+        </nav>
+        <div class="dropdown-panel" id="dropdown-panel">
+            <a href="/profile">Ver perfil</a>
+            <a href="/logout">Cerrar sesión</a>
+        </div>
+
+        <!-- Contenedor de botones -->
+        <div class="button-container">
+            <button class="sport-button">
+                <img src="images/football.svg" alt="Fútbol" class="button-image">
+                <span class="button-text">Fútbol</span>
+            </button>
+            <button class="sport-button">
+                <img src="images/basketball.svg" alt="Baloncesto" class="button-image">
+                <span class="button-text">Baloncesto</span>
+            </button>
+            <button class="sport-button">
+                <img src="images/padel.svg" alt="Padel" class="button-image">
+                <span class="button-text">Pádel</span>
+            </button>
+            <button class="sport-button">
+                <img src="images/others.svg"Otros" class="button-image">
+                <span class="button-text">Otros</span>
+            </button>
+        </div>
+
+        <h1>¿QUE TE APETECE JUGAR HOY?</h1>
+
+        <script src="js/mainPage.js"></script>
+    </body>
+</html>

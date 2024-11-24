@@ -31,7 +31,7 @@ document.getElementById('createButton').addEventListener('click', async function
         if(response.ok){
             alert('Cuenta creada existosamente');
             // Redirigir al usuario a otra pagina
-            //window.location.href = '/mainMenu';
+            window.location.href = '/mainMenu';
         }else{
             alert(result.error || 'Error al crear la cuenta');
         }
