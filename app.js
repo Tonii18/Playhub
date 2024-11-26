@@ -43,6 +43,10 @@ app.get('/mainmenu', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'mainPage.html'));
 });
 
+app.get('/profile', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'public', 'profile.html'));
+});
+
 /*
 *   CREACION DE LA BASE DE DATOS
 */
@@ -61,11 +65,6 @@ db.connect((err) => {
     }
     console.log('Conectado a la base de datos SQL con exito :)');
 });
-
-/*
-* Configuracion de express-session
-*/
-
 
 /*
 * FUNCIONES
@@ -117,7 +116,6 @@ const loginUser = (req, res) => {
         if(results.length === 0){
             return res.status(401).json({error: 'Usuario no existente'});
         }
-
         return res.status(200).json({message: 'Inicio de sesion exitoso'});
     });
 };
@@ -212,7 +210,6 @@ const loginOwnerBussiness = (req, res) => {
     });
 };
 
-// ruta para manejar la creacion de la cuenta
 
 app.post('/register', createAccount);
 app.post('/login', loginUser);

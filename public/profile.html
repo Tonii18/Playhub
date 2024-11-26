@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="profile-container">
+        <!-- Título -->
+        <h1 class="profile-title">Mi Perfil</h1>
+
+        <!-- Información del usuario -->
+        <div class="profile-info">
+            <div class="profile-field">
+                <span class="field-label">Nombre de usuario:</span>
+                <span class="field-value" id="username">[Nombre]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Correo electrónico:</span>
+                <span class="field-value" id="email">[Correo]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Teléfono:</span>
+                <span class="field-value" id="phone">[Teléfono]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Saldo disponible:</span>
+                <span class="field-value" id="balance">[Saldo] €</span>
+            </div>
+        </div>
+
+        <!-- Botón de regreso -->
+        <button class="back-button" onclick="window.location.href='mainPage.html'">Volver</button>
+    </div>
+</body>
+</html>

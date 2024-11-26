@@ -29,7 +29,6 @@ document.getElementById('createButton').addEventListener('click', async function
         const result = await response.json();
 
         if(response.ok){
-            alert('Cuenta creada existosamente');
             // Redirigir al usuario a otra pagina
             window.location.href = '/mainMenu';
         }else{
