@@ -1,16 +1,112 @@
+/* Elimina los márgenes y establece la altura de la ventana */
+body {
+    font-family: 'Inter';
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #3BA7B0, #36B88C);
+    color: white;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-image {
+    height: 90px;
+    width: 90px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    opacity: 0.8;
+}
+
+#play{
+    font-family: 'Inter';
+    font-weight: 900;
+}
+
+#hub{
+    font-family: 'Inter';
+    font-weight: 100;
+}
+
+/* Fondo superior con un degradado */
+.top-background {
+    width: 100%;
+    height: 50%; /* La mitad superior de la ventana */
+    background: linear-gradient(to right, #3BA7B0, #36B88C);
+}
+
+/* Fondo inferior blanco */
+.bottom-background {
+    width: 100%;
+    height: 50%; /* La mitad inferior de la ventana */
+    background-color: #f4f4f4;
+}
+
+/* Imagen de perfil */
+.profile-image {
+    position: absolute;
+    top: 16%; /* Calcula la posición para alinear la mitad de la imagen con el borde superior del contenedor */
+    left: 50%; /* Centra horizontalmente la imagen */
+    transform: translateX(-50%); /* Ajusta para centrar la imagen horizontalmente */
+    z-index: 10; /* Asegura que la imagen esté por encima del contenedor principal */
+}
+
+.profile-image img {
+    width: 120px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 120px;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover;
+    border: 5px solid #fff; /* Borde blanco para destacar la imagen */
+}
+
+
+
+
 /* Contenedor principal */
 .profile-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    width: 800px;
+    padding: 40px;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 50%; /* Colocamos la parte superior del contenedor en la mitad de la pantalla */
+    transform: translateY(-50%); /* Ajustamos para que la mitad del contenedor esté justo en la mitad de la pantalla */
 }
 
 /* Título */
 .profile-title {
+    font-family: 'Inter';
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -24,6 +120,7 @@
 }
 
 .profile-field {
+    font-family: 'Inter';
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
@@ -32,6 +129,7 @@
 }
 
 .field-label {
+    font-family: 'Inter';
     font-weight: bold;
     color: #555;
 }
@@ -40,22 +138,151 @@
     color: #333;
 }
 
-/* Botón de regreso */
-.back-button {
+.book-button {
+    font-family: 'Inter';
     display: block;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    background-color: #007bff;
+    background-color: #36B88C;
     color: #fff;
     text-align: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
-    background-color: #0056b3;
+.money-button{
+    font-family: 'Inter';
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #3BA7B0;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
 }
+
+.book-button:hover {
+    background-color: #23775b;
+}
+
+.money-button:hover{
+    background-color: #23656b;
+}
+
+/* Botón flotante en la esquina inferior izquierda */
+.floating-button {
+    position: fixed;
+    bottom: 50px; /* Coloca el botón a 20px del borde inferior */
+    left: 50px; /* Coloca el botón a 20px del borde izquierdo */
+    padding: 5px 5px;
+    background-color: #ffffff00;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.floating-button img{
+    width: 40px;
+    height: 40px;
+}
+
+.floating-button:hover {
+    background-color: #dddddd;
+}
+
+/* Media queries para dispositivos más pequeños (tabletas y móviles) */
+@media (max-width: 768px) {
+    /* Contenedor principal */
+    .profile-container {
+        max-width: 90%; /* Deja que el contenedor ocupe más espacio */
+        padding: 15px;
+    }
+
+    /* Título */
+    .profile-title {
+        font-size: 20px; /* Reducción del tamaño del título */
+    }
+
+    /* Campos de información */
+    .profile-field {
+        flex-direction: column; /* Los campos se apilan verticalmente */
+        margin: 10px 0;
+        padding: 12px;
+    }
+
+    .field-label {
+        font-size: 14px; /* Reducir el tamaño de la etiqueta */
+    }
+
+    .field-value {
+        font-size: 16px; /* Reducir el tamaño del valor */
+    }
+
+    /* Botón flotante */
+    .floating-button {
+        padding: 8px 8px; /* Reducir el tamaño del botón */
+        font-size: 18px; /* Reducir el tamaño del ícono */
+        bottom: 15px; /* Ajustar la posición */
+        left: 15px; /* Ajustar la posición */
+    }
+
+    .floating-button i {
+        font-size: 22px; /* Reducir el tamaño del ícono */
+    }
+}
+
+/* Media queries para pantallas más pequeñas (móviles) */
+@media (max-width: 480px) {
+    /* Contenedor principal */
+    .profile-container {
+        padding: 10px;
+    }
+
+    /* Título */
+    .profile-title {
+        font-size: 18px; /* Reducir aún más el tamaño del título */
+    }
+
+    /* Campos de información */
+    .profile-field {
+        flex-direction: column; /* Los campos se apilan verticalmente */
+        margin: 8px 0;
+        padding: 10px;
+    }
+
+    .field-label {
+        font-size: 13px; /* Reducir el tamaño de la etiqueta */
+    }
+
+    .field-value {
+        font-size: 14px; /* Reducir el tamaño del valor */
+    }
+
+    /* Botón flotante */
+    .floating-button {
+        padding: 6px 6px; /* Reducir aún más el tamaño del botón */
+        font-size: 16px; /* Reducir el tamaño del ícono */
+        bottom: 10px; /* Ajustar la posición */
+        left: 10px; /* Ajustar la posición */
+    }
+
+    .floating-button i {
+        font-size: 20px; /* Reducir el tamaño del ícono */
+    }
+}
+
+
+
+
+

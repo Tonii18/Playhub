@@ -8,34 +8,51 @@
     <title>Perfil de Usuario</title>
 </head>
 <body>
+    <!-- Fondo degradado -->
+    <div class="top-background">
+        <nav class="navbar">
+            <div class="logo">
+                <span id="play">PLAY</span>
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <span id="hub">HUB</span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="bottom-background"></div>
+
     <!-- Contenedor principal -->
     <div class="profile-container">
-        <!-- Título -->
         <h1 class="profile-title">Mi Perfil</h1>
 
-        <!-- Información del usuario -->
         <div class="profile-info">
             <div class="profile-field">
                 <span class="field-label">Nombre de usuario:</span>
-                <span class="field-value" id="username"></span>
+                <span class="field-value" id="username">[Nombre]</span>
             </div>
             <div class="profile-field">
                 <span class="field-label">Correo electrónico:</span>
-                <span class="field-value" id="email"></span>
+                <span class="field-value" id="email">[Correo]</span>
             </div>
             <div class="profile-field">
                 <span class="field-label">Teléfono:</span>
-                <span class="field-value" id="phone"></span>
+                <span class="field-value" id="phone">[Teléfono]</span>
             </div>
             <div class="profile-field">
                 <span class="field-label">Saldo disponible:</span>
-                <span class="field-value" id="balance"></span>
+                <span class="field-value" id="balance">[Saldo] €</span>
             </div>
         </div>
 
-        <!-- Botón de regreso -->
-        <button class="back-button" onclick="window.location.href='/mainmenu'">Volver</button>
-        <script src="js/profile.js"></script>
+        <button class="book-button">Ver reservas</button>
+        <button class="money-button">Rellenar saldo</button>
     </div>
+
+    <button class="floating-button" onclick="window.location.href='/mainmenu'">
+        <img src="images/arrow_back.png" alt="">
+    </button>
+
+    <script src="js/profile.js"></script>
 </body>
+
 </html>
