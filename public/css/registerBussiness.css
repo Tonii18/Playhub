@@ -30,7 +30,7 @@ body {
     margin-bottom: 20px;
 }
 
-.userRegister, .bussinessRegister {
+.userRegister, .imageContainer {
     flex: 1;
     padding: 40px;
     display: flex;
@@ -43,18 +43,25 @@ body {
     background-color: #f4f4f4;
 }
 
-.bussinessRegister {
+.imageContainer {
     background-color: #e7e7e7;
 }
 
-.title, .bussineesTitle {
+.imageContainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.title {
     font-family: 'Inter';
     margin-bottom: 20px;
     text-align: center;
     color: #333;
 }
 
-.inputContainer, .inputBussinessContainer {
+.inputContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -76,27 +83,24 @@ input:focus {
     border-color: #3ba7b0;
 }
 
-.buttonContainer {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-button {
+button#register{
     font-family: 'Inter';
-    padding: 12px 24px;
+    padding: 12px;
+    margin-top: 15px;
     border: none;
     border-radius: 5px;
     background-color: #000000;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #555555;
+button#register:hover {
+    background-color: #4e4e4e;
+    transform: scale(1.05);
 }
+
 
 .phraseContainer {
     font-family: 'Inter';
@@ -127,7 +131,7 @@ h3 {
         flex-direction: column;
     }
 
-    .userRegister, .bussinessRegister {
+    .userRegister, .imageContainer {
         padding: 20px;
     }
 
@@ -139,4 +143,5 @@ h3 {
         font-size: 0.9rem;
     }
 }
+
 
