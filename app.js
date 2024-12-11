@@ -60,6 +60,10 @@ app.get('/profile', (req, res) =>{
     res.sendFile(path.join(__dirname, 'public', 'profile.html'));
 });
 
+app.get('/sport-searching', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'sportSearching.html'));
+});
+
 /*
 *   CREACION DE LA BASE DE DATOS
 */

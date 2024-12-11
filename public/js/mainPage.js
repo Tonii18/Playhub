@@ -53,4 +53,13 @@ profileBtn.addEventListener('click', () => {
     window.location.href = '/profile';
 })
 
+// Evento al pulsar el boton de 'Otros'
+
+const otherButton = document.getElementById('sport-others');
+
+otherButton.addEventListener('click', sportSearchPage);
+function sportSearchPage(){
+    window.location.href = '/sport-searching';
+}
+
 
