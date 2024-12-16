@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ownerMainPage.css">
+    <title>Panel de Control</title>
+</head>
+<body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <span id="play">PLAY</span>
+            <img src="images/logo.png" alt="Logo" class="logo-image">
+            <span id="hub">HUB</span>
+        </div>
+        <button class="menu-button" id="menu-button">☰</button>
+    </nav>
+    <div class="dropdown-panel" id="dropdown-panel">
+        <button type="button" id="profile-button">Ver Perfil</button>
+        <button type="button" id="logout-button">Cerrar sesion</button>
+    </div>
+
+    <!--CONTENIDO DE LA PAGINA-->
+    
+
+    <!-- Popup de Confirmación -->
+    <div id="logout-popup" class="popup-overlay">
+        <div class="popup-content">
+            <p>¿Estás seguro de que deseas cerrar sesión?</p>
+            <div class="popup-buttons">
+                <button id="confirm-logout" class="popup-button yes">Sí</button>
+                <button id="cancel-logout" class="popup-button no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ownerMainPage.js"></script>
+
+</body>
+</html>

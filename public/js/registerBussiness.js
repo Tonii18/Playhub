@@ -7,18 +7,8 @@ document.getElementById('register').addEventListener('click', async function () 
     const contraseña = document.getElementById('contraseñaInput').value;
     const telefono = document.getElementById('telefonoInput').value;
 
-    const nombre_negocio = document.getElementById('nombreNegocioInput').value;
-    const correo_negocio = document.getElementById('correoNegocioInput').value;
-    const ubicacion = document.getElementById('ubicacionInput').value;
-    const telefono_negocio = document.getElementById('telefonoNegocioInput').value;
-
     if(!correo || !nombre || !apellidos || !contraseña || !telefono){
         alert('Por favor, rellene todos los campos');
-        return;
-    }
-
-    if(!nombre_negocio || !correo_negocio || !ubicacion || !telefono_negocio){
-        alert('Por favor rellene todos los campos');
         return;
     }
 
@@ -32,16 +22,14 @@ document.getElementById('register').addEventListener('click', async function () 
             },
             body: JSON.stringify({
                 nombre, apellidos, correo, contraseña, telefono,
-                nombre_negocio, correo_negocio, ubicacion, telefono_negocio
             })
         });
 
         const result = await response.json();
 
         if(response.ok){
-            alert('Negocio creado exitosamente');
             // Redirigir al usuario a otra pagina
-            //window.location.href = 
+            window.location.href = '/owner-mainpage'
         }else{
             alert(result.error || 'Error al crear la cuenta');
         }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/ownerProfile.css">
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    
+     <!-- Fondo degradado -->
+     <div class="top-background">
+        <nav class="navbar">
+            <div class="logo">
+                <span id="play">PLAY</span>
+                <img src="images/logo.png" alt="Logo" class="logo-image">
+                <span id="hub">HUB</span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="bottom-background"></div>
+
+    <!-- Contenedor principal -->
+    <div class="profile-container">
+        <h1 class="profile-title">Mi Perfil</h1>
+
+        <div class="profile-info">
+            <div class="profile-field">
+                <span class="field-label">Nombre de usuario:</span>
+                <span class="field-value" id="username">[Nombre]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Correo electrónico:</span>
+                <span class="field-value" id="email">[Correo]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Teléfono:</span>
+                <span class="field-value" id="phone">[Teléfono]</span>
+            </div>
+            <div class="profile-field">
+                <span class="field-label">Ingresos totales:</span>
+                <span class="field-value" id="balance">[Ingresos] €</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="floating-button" onclick="window.location.href='/owner-mainpage'">
+        <img src="images/arrow_back.png" alt="">
+    </button>
+
+    <script src="js/ownerProfile.js"></script>
+
+</body>
+</html>

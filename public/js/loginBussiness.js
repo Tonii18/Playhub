@@ -25,8 +25,7 @@ document.getElementById('loginButton').addEventListener('click', async function(
         const result = await response.json();
 
         if(response.ok){
-            alert('Inicio de sesion correcto');
-            //window.location.href = '';
+            window.location.href = '/owner-mainpage';
         }else{
             alert(result.error || 'Error al intentar iniciar sesion');
         }
