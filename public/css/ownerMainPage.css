@@ -61,9 +61,99 @@ body {
 }
 
 /*
-    RESTO DE CODIGO
+    RESTO DE CODIGO. Pon aqui el codigo css
 */
 
+/* Imagen decorativa */
+.decorative-image {
+    display: flex; /* Activar flexbox para centrar contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Asegura que también esté alineada verticalmente si es necesario */
+    margin: 5px 0; /* Espacio vertical reducido */
+}
+
+.decorative-image img {
+    width: 500px; /* Ancho fijo para la imagen */
+    height: auto; /* Mantener la proporción */
+    display: block; /* Elimina espacio adicional debajo de la imagen */
+}
+
+
+/* Contenedor principal de tarjetas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 15px auto; /* Ajustar margen general */
+    flex-wrap: nowrap; /* Evita salto de línea */
+    max-width: 1000px;
+}
+
+/* Tarjetas */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px; /* Reducir ligeramente el tamaño */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-family: 'Inter';
+    font-size: 20px; /* Reducir tamaño del título */
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-image {
+    width: 70%; /* Ajustar al 80% del ancho de la tarjeta */
+    max-height: 110px; /* Limitar altura máxima */
+    margin: 20px auto; /* Añadir margen alrededor de la imagen */
+    display: block;
+    object-fit: contain; /* Mantener proporciones y evitar distorsión */
+}
+
+.card-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 12px;
+    font-family: 'Inter';
+    font-size: 15px;
+    color: #fff;
+    background-color: #3BA7B0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #36B88C;
+}
+
+/* Footer */
+.footer {
+    font-family: 'Inter';
+    color: rgb(173, 173, 173);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 15px;
+}
 
 
 /* Panel lateral (responsive y ocupa todo el alto de la pantalla) */
@@ -186,3 +276,79 @@ body {
         transform: scale(1);
     }
 }
+
+/*MEDIA QUERIES PARA EL DASHBOARD*/
+/* Media Query para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .decorative-image img {
+        width: 700px; /* Reducir tamaño de la imagen decorativa */
+    }
+
+    .card-container {
+        gap: 20px; /* Reducir espacio entre las tarjetas */
+    }
+
+    .card {
+        width: 260px; /* Reducir el ancho de las tarjetas */
+    }
+}
+
+/* Media Query para dispositivos móviles grandes */
+@media (max-width: 768px) {
+    .decorative-image img {
+        width: 500px; /* Imagen decorativa más pequeña */
+    }
+
+    .card-container {
+        flex-direction: column; /* Apila las tarjetas en columna */
+        gap: 25px; /* Espacio entre las tarjetas */
+        align-items: center; /* Centra las tarjetas */
+    }
+
+    .card {
+        width: 80%; /* Ajustar el ancho al 80% del contenedor */
+    }
+
+    .card-image {
+        max-height: 90px; /* Reducir la altura máxima de las imágenes dentro de las tarjetas */
+    }
+}
+
+/* Media Query para dispositivos móviles pequeños */
+@media (max-width: 480px) {
+    .decorative-image img {
+        width: 90%; /* Imagen decorativa ocupa el 90% del ancho */
+    }
+
+    .card {
+        width: 90%; /* Tarjetas ocupan el 90% del ancho del contenedor */
+        padding: 15px; /* Reducir el padding */
+    }
+
+    .card-title {
+        font-size: 18px; /* Texto del título más pequeño */
+    }
+
+    .card-image {
+        max-height: 70px; /* Imágenes aún más pequeñas */
+    }
+
+    .card-button {
+        font-size: 14px; /* Botones más pequeños */
+        padding: 8px 12px;
+    }
+
+    .navbar {
+        padding: 20px 10px; /* Reducir padding de la barra de navegación */
+    }
+
+    .logo {
+        font-size: 30px; /* Reducir tamaño del logo */
+    }
+
+    .logo-image {
+        height: 60px; /* Reducir tamaño del logo */
+        width: 60px;
+    }
+}
+
